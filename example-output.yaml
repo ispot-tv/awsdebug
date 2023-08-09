@@ -1,0 +1,33 @@
+Aws config file: |2
+  [profile dev]
+  role_arn=arn:aws:iam::123456789:role/foo
+  source_profile=dev
+
+Command: |2
+
+  aws s3 ls s3://foo
+
+Error: |2
+
+  An error occurred (AccessDenied) when calling the ListObjectsV2 operation: Access Denied
+
+Identity: |2
+
+  {
+      "UserId": "AAAAAAAAAAAAAAAAAAAAA:botocore-session-1111111111",
+      "Account": "123456789",
+      "Arn": "arn:aws:sts::123456789:assumed-role/foo/botocore-session-1111111111"
+  }
+
+Config: |2
+
+        Name                    Value             Type    Location
+        ----                    -----             ----    --------
+     profile                      dev              env    ['AWS_PROFILE', 'AWS_DEFAULT_PROFILE']
+  access_key     ****************AAAA      assume-role    
+  secret_key     ****************aa11      assume-role    
+      region                <not set>             None    None
+
+Hostname: almenon.local
+
+Aws private ip: 
