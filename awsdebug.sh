@@ -16,10 +16,10 @@ fi
 
 indent(){ sed 's/^/  /'; }
 
-echo "What is the command or line of code you tried to run?"
+echo "What is the command or line of code you tried to run? Only type in a single line that is most relevant: "
 read command
 
-echo "Copy and paste the error you got here"
+echo "Copy and paste the error you got here. Only type in a single line: "
 read error
 
 echo Gathering more debug information...
