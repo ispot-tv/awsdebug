@@ -17,10 +17,10 @@ fi
 indent(){ sed 's/^/  /'; }
 
 echo "What is the command or line of code you tried to run? Only type in a single line that is most relevant: "
-read command
+read command < /dev/tty
 
 echo "Copy and paste the error you got here. Only type in a single line: "
-read error
+read error < /dev/tty
 
 echo Gathering more debug information...
 identity=$(aws sts get-caller-identity 2>&1)
